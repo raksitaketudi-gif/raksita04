@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web my hometown</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="assets/creative.css">
+    <style>
+        :root {
+            --c1: #DEB887;
+            --c2: #003300;
+            --c3: #E9967A;
+            --c4: #FFB6C1;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: " Kanit", sans-serif
+        }
+
+        body {
+            font-size: 16px;
+            background-color: var(--c4);
+            color: var(--c2);
+        }
+
+        .w3-sidebar {
+            background-color: var(--c1) !important;
+            color: #fff !important;
+        }
+
+        .w3-top.w3-red,
+        header.w3-container.w3-top {
+            background-color: var(--c2) !important;
+            color: #fff !important;
+        }
+
+        .w3-button.w3-red,
+        .w3-red {
+            background-color: var(--c3) !important;
+            color: #fff !important;
+            border-color: var(--c2) !important;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--c2);
+        }
+
+        /* Make gallery and content images uniform and aligned */
+        .w3-half img,
+        .w3-third img,
+        .w3-content img,
+        .w3-row-padding img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin: 0 0 16px 0;
+            opacity: 0.95;
+            cursor: pointer;
+        }
+
+        .w3-half img:hover,
+        .w3-third img:hover,
+        .w3-content img:hover,
+        .w3-row-padding img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+        style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+            style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Tak<br>: บ้านเรา</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="Web1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าแรก</a>
+            <a href="Web2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">เกี่ยวกับ</a>
+            <a href="Web3.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">สถานที่สำคัญ</a>
+            <a href="Web4.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อุทยานแห่งชาติ</a>
+            <a href="Web5.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อาหารพื้นเมือง</a>
+            <a href="Web6.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ภาพถ่ายในอดีต</a>
+            <a href="Web7.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ติดต่อ</a>
+        </div>
+
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>TAK : บ้านเรา</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Header -->
+        <div class="w3-container" style="margin-top:80px" id="showcase">
+            <h1 class="w3-jumbo"><b>บ้านเกิดเมืองตาก</b></h1>
+
+        </div>
+
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="w3-container" id="services" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>จังหวัดตาก</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <p>จังหวัดตากตั้งอยู่ภาคเหนือตอนล่างของประเทศ มีพื้นที่ทั้งหมด 16,406.65 ตารางกิโลเมตร
+                เป็นจังหวัดที่มีขนาดใหญ่เป็นอันดับ 4 ของประเทศและเป็นอันดับ 2 ของภาคเหนือ สูงกว่าระดับน้ำทะเล 116.2 เมตร
+                มีระยะทางห่างจากกรุงเทพฯ เป็นระยะทาง 426 กิโลเมตร</p>
+            <p>สภาพภูมิประเทศของจังหวัดตากเป็นพื้นที่ตามแนวเทือกเขา โดยสภาพพื้นที่จะถูกแบ่งออกเป็น 2 ส่วนใหญ่ ๆ
+                โดยมีเทือกเขาถนนธงชัยกั้นกลาง ทำให้ลักษณะภูมิอากาศแตกต่างกันไป
+                เนื่องจากเทือกเขาถนนธงชัยเป็นตัวปะทะมรสุมตะวันตกเฉียงใต้ที่พัดมาจากมหาสมุทรอินเดียและทะเลอันดามัน
+                ทำให้ซีกตะวันออกได้รับความชุ่มชื้นจากลมมรสุมไม่เต็มที่ สภาพแห้งแล้ง
+                ส่วนฝั่งตะวันตกจะได้รับอิทธิพลจากลมมรสุมมากกว่าทำให้ปริมาณฝนตกมีความชุ่มชื้นโดยเฉพาะในที่ที่อยู่ในเขตภูเขา
+            </p>
+        </div>
+
+        <!-- Designers -->
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>ที่ตั้ง อาณาเขต</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <p>ส่วนที่ 1</p>
+            <p>ตั้งอยู่ด้านทิศตะวันออก ประกอบด้วย 4 อำเภอ ได้แก่ อำเภอเมืองตาก อำเภอบ้านตาก อำเภอสามเงา และอำเภอวังเจ้า
+                สภาพพื้นที่ส่วนใหญ่เป็นภูเขาสูงและที่ราบสูง ลาดเอียงลงไปทางทิศตะวันออกสู่แม่น้ำปิงและแม่น้ำวัง
+                ทำให้เกิดพื้นที่ราบแคบริมสองฝั่งของแม่น้ำ
+            </p>
+            <p>ส่วนที่ 2</p>
+            <p>ตั้งอยู่ทางด้านทิศตะวันตก ประกอบด้วย 5 อำเภอ ได้แก่อำเภอแม่สอด อำเภอพบพระ อำเภอแม่ระมาด อำเภออุ้มผาง
+                และอำเภอท่าสองยาง ภูมิอากาศได้รับอิทธิพลมาจากมหาสมุทรอินเดียและทะเลอันดามัน มีความชุ่มชื้น
+                ฝนตกมากกว่าซีกด้านตะวันออก
+            </p>
+            <p>
+                จังหวัดตากมีอาณาเขตติดต่อกับจังหวัดแม่ฮ่องสอน เชียงใหม่ ลำพูน ลำปาง สุโขทัย กำแพงเพชร นครสวรรค์
+                อุทัยธานี กาญจนบุรี และสาธารณรัฐแห่งสหภาพเมียนมา ยาวประมาณ 540 กม. (แม่น้ำเมย 170 กม
+                เทือกเขาตะนาวศรี 370 กม.)
+            </p>
+        </div>
+
+        <div class="w3-content">
+
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="mt.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอเมืองตาก</h2>
+                    <p>
+                        ประวัติศาสตร์ : เป็นเมืองเก่าแก่ริมแม่น้ำปิง
+                        เคยเป็นศูนย์กลางการค้าและการเดินทัพสำคัญในสมัยกรุงศรีอยุธยา
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : อำเภอบ้านตาก,วังเจ้า,พบพระ,แม่สอด,แม่ระมาด และจังหวัดสุโขทัย,กำแพงเพชร
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : ในตัวเมืองตากมี ศาลสมเด็จพระเจ้าตากสินมหาราช
+                        ที่เป็นศูนย์รวมจิตใจของชาวเมือง และมี สะพานสมโภชกรุงรัตนโกสินทร์ 200 ปี (สะพานแขวน)
+                        ที่เป็นจุดชมวิวแม่น้ำปิงและอาทิตย์ตกดินที่สวยงาม
+                    </p>
+                </div>
+
+            </div>
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="bt_2.png" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอบ้านตาก</h2>
+                    <p>
+                        ประวัติศาสตร์ : เป็นเมืองเก่าแก่ดั้งเดิมในสมัยสุโขทัย
+                        เชื่อว่าเป็นถิ่นกำเนิดของสมเด็จพระเจ้าตากสินมหาราช
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : อำเภอเมืองตาก,สามเงา,แม่ระมาด และจังหวัดสุโขทัย
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : เจดีย์ยุทธหัตถี (เจดีย์เฉลิมพระเกียรติพระเจ้ารามคำแหงมหาราช)
+
+                        วัดพระบรมธาตุบ้านตาก: เป็นที่ประดิษฐานพระบรมธาตุที่จำลองแบบมาจากเจดีย์ชเวดากอง และเป็นที่ตั้งของ
+                        หลวงพ่อทันใจ ที่มีชื่อเสียงเรื่องความศักดิ์สิทธิ์
+
+                        วนอุทยานไม้กลายเป็นหิน: สถานที่ที่พบไม้กลายเป็นหินยาวที่สุดในโลก (กว่า 72 เมตร)
+                    </p>
+                </div>
+
+            </div>
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="sng2_2.png" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอสามเงา</h2>
+                    <p>
+                        ประวัติศาสตร์ : สามเงาเป็นชุมชนเก่าแก่ริมแม่น้ำปิง มีบทบาทด้านการคมนาคมและการตั้งถิ่นฐาน
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอบ้านตาก,แม่ระมาด และจังหวัดลำปาง,ลำพูน,เชียงใหม่
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : เป็นที่ตั้งของเขื่อนภูมิพล
+                        ซึ่งเป็นเขื่อนคอนกรีตโค้งที่ใหญ่ที่สุดในประเทศไทย
+                        และมีเส้นทางล่องแพชมความงามเหนือเขื่อนไปจนถึงวัดพระธาตุแก่งสร้อย
+                    </p>
+
+                </div>
+
+            </div>
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="wj.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอวังเจ้า</h2>
+                    <p>
+                        ประวัติศาสตร์ : ปรากฏชื่อในศิลาจารึกสุโขทัยว่าเป็นเมืองหน้าด่านสำคัญ
+                        และเคยเป็นที่ประทับพักแรมของพระมหากษัตริย์ในอดีตขณะเสด็จประพาส
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอเมืองตาก,พบพระ,แม่ระมาด และจังหวัดกำแพงเพชร
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : อำเภอวังเจ้าเป็นที่ตั้งของ อุทยานแห่งชาติคลองวังเจ้า
+                        ซึ่งมีแหล่งท่องเที่ยวทางธรรมชาติที่สมบูรณ์มาก โดยเฉพาะน้ำตกและจุดชมวิวเขาสันเย็น
+                    </p>
+                </div>
+
+            </div>
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="ms_2.png" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอแม่สอด</h2>
+                    <p>
+                        ประวัติศาสตร์ : เป็นเมืองเก่าแก่ที่มีความสำคัญทางยุทธศาสตร์มาตั้งแต่สมัยอยุธยา
+                        และพัฒนาจากหมู่บ้านเล็กๆ สู่เขตพัฒนาเศรษฐกิจพิเศษและประตูการค้าสำคัญสู่เมียนมา
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอเมืองตาก,พบพระ,แม่ระมาด,วังเจ้า และประเทศเมียนมา
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : เป็นศูนย์กลางการค้าอัญมณีและสินค้าชายแดนที่ ตลาดริมเมย แล้ว แม่สอดยังมี
+                        สะพานมิตรภาพไทย-เมียนมา ที่เป็นจุดเชื่อมโยงเส้นทางระเบียงเศรษฐกิจตะวันออก-ตะวันตก (East-West
+                        Economic Corridor)
+                    </p>
+                </div>
+
+            </div>
+            <div class="w3-row w3-margin">
+
+                <div class="w3-third">
+                    <img src="pp2.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอพบพระ</h2>
+                    <p>
+                        ประวัติศาสตร์ : มีการตั้งถิ่นฐานของชนเผ่าหลากหลายเดิมชื่อ "บ้านเพอะพะ"
+                        เป็นภาษากะเหรี่ยงที่แปลว่า "มีน้ำซึมออกมาจากดิน" ก่อนจะเพี้ยนมาเป็นชื่อ "พบพระ"
+                        ที่มีความหมายเป็นมงคลในปัจจุบัน
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอแม่สอด,อุ้มผาง,วังเจ้า จังหวัดกำแพงเพชร และประเทศเมียนมา
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : เป็นแหล่งปลูกกุหลาบที่ใหญ่ที่สุดในประเทศไทย และมีน้ำตกพาเจริญ
+                        ที่มีชั้นหินลดหลั่นกันถึง 97 ชั้น
+                    </p>
+                </div>
+                <div class="w3-third">
+                    <img src="mrm3.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอแม่ระมาด</h2>
+                    <p>
+                        ประวัติศาสตร์ : เป็นชุมชนเก่าแก่ของชาวกะเหรี่ยงและละว้า
+                        เดิมเป็นส่วนหนึ่งของอำเภอแม่สอดก่อนจะแยกตัวออกมา
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอท่าสองยาง,แม่สอด,บ้านตาก,สามเงา จังหวัดเชียงใหม่ และประเทศเมียนมา
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : มีอุทยานแห่งชาติขุนพะวอ ที่มีอากาศเย็นสบายตลอดปี และมี วัดดอนแก้ว
+                        ซึ่งเป็นที่ประดิษฐานพระพุทธรูปหินอ่อนศิลปะแบบพม่าที่สวยงาม
+                    </p>
+                </div>
+                <div class="w3-third">
+                    <img src="ap2.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภออุ้มผาง</h2>
+                    <p>
+                        ประวัติศาสตร์ : เคยเป็นเมืองหน้าด่านและจุดตรวจหนังสือเดินทาง (อุ้มผะ)
+                        ของชาวกะเหรี่ยงที่เดินทางไปมาในอดีต ก่อนจะกลายเป็นอำเภอที่โดดเด่นด้านการอนุรักษ์ป่าไม้
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอพบพระ จังหวัดกำแพงเพชร,กาญจนบุรี,อุทัยธานี และประเทศเมียนมา
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : เป็นที่ตั้งของ น้ำตกทีลอซู
+                        ซึ่งเป็นน้ำตกที่ใหญ่ที่สุดและสวยที่สุดในประเทศไทย
+                        ตั้งอยู่ในเขตรักษาพันธุ์สัตว์ป่าอุ้มผาง
+                        ซึ่งได้รับการยกย่องให้เป็นมรดกโลกทางธรรมชาติร่วมกับเขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้งด้วยครับ
+                    </p>
+                </div>
+                <div class="w3-third">
+                    <img src="t2ng.jpg" style="width:100%;min-height:200px">
+                </div>
+                <div class="w3-twothird w3-container">
+                    <h2>อำเภอท่าสองยาง</h2>
+                    <p>
+                        ประวัติศาสตร์ : เดิมเป็นกิ่งอำเภอขึ้นกับจังหวัดแม่ฮ่องสอน
+                        ก่อนจะโอนมาขึ้นกับจังหวัดตากในปี พ.ศ. 2491
+                        และได้รับชื่อตามหมู่บ้านที่มีต้นยางขนาดใหญ่สองต้นโดดเด่นอยู่ริมฝั่งน้ำเมย
+                    </p>
+                    <p>
+                        อาณาเขตติดต่อ : ติดต่ออำเภอแม่ระมาด จังหวัดเชียใหม่,แม่ฮ่องสอน และประเทศเมียนมา
+                    </p>
+                    <p>
+                        จุดเด่นที่ห้ามพลาด : ม่อนคลุยและม่อนทูเล :
+                        จุดชมทะเลหมอกและดาวยามค่ำคืนที่สวยงามและท้าทายสำหรับนักเดินป่า
+
+                        ถ้ำแม่อุสุ : ถ้ำหินงอกหินย้อยที่สวยงามและได้ชื่อว่าเป็น "โรงละครใต้ดิน" ขนาดใหญ่
+
+                        วิถีชีวิตชาวปกาเกอะญอ:
+                        สัมผัสวัฒนธรรมท้องถิ่นและการแต่งกายที่เป็นเอกลักษณ์ของคนในพื้นที่
+                    </p>
+                </div>
+            </div>
+
+</body>
+
+</html>
+
+<script src="assets/creative.js"></script>

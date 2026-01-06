@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web my hometown</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="assets/creative.css">
+    <style>
+        :root {
+            --c1: #DEB887;
+            --c2: #003300;
+            --c3: #E9967A;
+            --c4: #FFB6C1;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: " Kanit", sans-serif
+        }
+
+        body {
+            font-size: 16px;
+            background-color: var(--c4);
+            color: var(--c2);
+        }
+
+        .w3-sidebar {
+            background-color: var(--c1) !important;
+            color: #fff !important;
+        }
+
+        .w3-top.w3-red,
+        header.w3-container.w3-top {
+            background-color: var(--c2) !important;
+            color: #fff !important;
+        }
+
+        .w3-button.w3-red,
+        .w3-red {
+            background-color: var(--c3) !important;
+            color: #fff !important;
+            border-color: var(--c2) !important;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--c2);
+        }
+
+        /* Make gallery and content images uniform and aligned */
+        .w3-half img,
+        .w3-third img,
+        .w3-content img,
+        .w3-row-padding img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin: 0 0 16px 0;
+            opacity: 0.95;
+            cursor: pointer;
+        }
+
+        .w3-half img:hover,
+        .w3-third img:hover,
+        .w3-content img:hover,
+        .w3-row-padding img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding"
+        style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+            style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Tak<br>: บ้านเรา</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="Web1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าแรก</a>
+            <a href="Web2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">เกี่ยวกับ</a>
+            <a href="Web3.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">สถานที่สำคัญ</a>
+            <a href="Web4.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อุทยานแห่งชาติ</a>
+            <a href="Web5.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อาหารพื้นเมือง</a>
+            <a href="Web6.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ภาพถ่ายในอดีต</a>
+            <a href="Web7.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ติดต่อ</a>
+        </div>
+
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>TAK : บ้านเรา</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Header -->
+        <div class="w3-container" style="margin-top:80px" id="showcase">
+            <h1 class="w3-jumbo"><b>รู้จักตาก...ให้มากขึ้น</b></h1>
+
+        </div>
+
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="w3-container" id="services" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>เขื่อนภูมิพล</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <img src="sng2_2.png" style="width:100%;min-height:200px">
+            <p> เขื่อนภูมิพลเป็นเขื่อนคอนกรีตโค้งและเป็น เขื่อนอเนกประสงค์แห่งแรกของประเทศไทย เดิมชื่อเขื่อนยันฮี
+                ต่อมาเมื่อวันที่ ๒๕ กรกฏาคม ๒๕๐๐ พระบาทสมเด็จพระเจ้าอยู่หัวได้พระราชทาน พระปรมาภิไธย
+                ให้เป็นชื่อเขื่อนว่า เขื่อนภูมิพล ลักษณะของเขื่อน เป็นเขื่อนคอนกรีตโค้งเพียงแห่งเดียวในประเทศไทย และ
+                เอเชียอาคเนย์ และเป็นอันดับ ๘ ของโลกสร้างปิดกั้น ลำน้ำปิง ที่ บริเวณเขาแก้ว อำเภอสามเงา จังหวัดตาก
+                อ่างเก็บน้ำสามารถรองรับน้ำได้สูงสุด ๑๓,๔๖๒ ล้านลูกบาศก์เมตร</p>
+            <p> ประโยชน์ ของการระบายน้ำจากเขื่อนภูมิพล เขื่อนภูมิพลมีภารกิจหลัก คือ ระบายน้ำ ผลิตไฟฟ้า ให้ตรงตามแผนที่
+                กรมชลประทานกำหนดมาให้ โดยปริมาณน้ำที่ระบายออกไปจากเขื่อนจะถูกนำไปใช้ ประโยชน์หลายด้าน
+                ทั้งด้านการเกษตรที่อุปโภค-บริโภค คมนาคม ท่องเที่ยว รวมทั้งผลักดันลำน้ำเดิมจังหวัดกำแพงเพชร
+                และจังหวัดนครสวรรค์ สนับสนุนพื้นที่เพาะปลูกได้ถึง ๙.๕ ล้านไร่ ในพื้นที่ จังหวัดตาก
+            </p>
+        </div>
+
+        <!-- Designers -->
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>ศาลสำเด็จพระเจ้าตากสินมหาราช</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <img src="san.jpg" style="width:100%;min-height:200px">
+            <p>ศาลคู่บ้านคู่เมืองจังหวัดตาก ที่ผู้คนให้ความเคารพ และมาสักการะจำนวนมากทั้งวัน
+                เป็นศาลสมเด็จพระเจ้าตากสินมหาราชแห่งแรกของประเทศไทย ถูกสร้างขึ้นเมื่อปี พ.ศ. 2490
+                และอยู่คู่จังหวัดตากมามากกว่า 70 ปี
+            </p>
+            <p> สมเด็จพระเจ้าตากสินมหาราช คือ เจ้าเมืองตากที่มีบทบาทสำคัญในประวัติศาสตร์ไทย
+                ในฐานะจอมทัพที่รวบรวมกองทัพตีฝ่าวงล้อมของข้าศึกพม่าในเหตุการณ์เสียกรุง ฯ ครั้งที่ 2 และสามารถกู้กรุงศรี
+                ฯ กลับคืนมา ก่อนย้ายเมืองหลวงไปที่ธนบุรี และขึ้นตนเป็นพระเจ้ากรุงธนบุรีองค์แรก และองค์เดียวของประเทศไทย
+            </p>
+        </div>
+
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>วัดพระธาตุบ้านตาก</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <img src="bt_2.png" style="width:100%;min-height:200px">
+            <p> เป็นวัดเก่าแก่ที่มี พระบรมธาตุเจดีย์ ตั้งอยู่ภายในวัด โดยสร้างขึ้นเมื่อประมาณพุทธศตวรรษที่ 18
+                ในอดีตชาวบ้านจะเรียกว่า วัดพระเจ้าทันใจ เพราะวัดนี้ประดิษฐาน พระเจ้าทันใจ พระพุทธรูปปางสมาธิ
+                ที่เป็นที่สักการะของชาวบ้านนั่นเองค่ะ และยังเป็นพระธาตุประจำปีเกิดของปีมะเมีย
+            </p>
+            <p> โดยมีตำนานเรื่องเล่าถึงพระเจ้าทันใจว่า สร้างเสร็จภายในหนึ่งวันเท่านั้น และว่ากันว่าศักดิ์สิทธิ์จริงๆ
+                จะเห็นได้จากการที่มีพระเจ้าทันใจอยู่มากมายหลายวัดด้วยกัน แต่ที่เป็นที่นับถือมากที่สุด ก็คือที่นี่
+                วัดพระบรมธาตุ
+            </p>
+            <p>
+                โดยวัดยังมีการจัดงานในช่วงเทศกาลสงกรานต์ทุกปีๆ ด้วย นอกจากนั้นก็ยังมีงานประเพณีที่สำคัญ คือ
+                ประเพณีขึ้นธาตุเดือนเก้า เป็นงานที่จัดขึ้นเพื่อเป็นการบูชาพระบรมธาตุ โดยจะจัดในวันขึ้น 14 ค่ำ และ 15 ค่ำ
+                เดือน 9 ของภาคเหนือ ประมาณปลายเดือนพฤษภาคมหรือเดือนมิถุยายนของทุกปีค่ะ ซึ่งภายในงานก็ะมีการจัดขบวนแห่
+                ทั้ง ขบวนกลองยาว ขบวนปัจจัยไทยทาน ขบวนต้นเงิน ขบวนต้นผ้าป่า ขบวนตุงไชย และ ผ้าห่มองค์พระธาตุ
+            </p>
+        </div>
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>ตรอกบ้านจีน</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <img src="ban2.jpg" style="width:100%;min-height:200px">
+            <p> ชุมชนดั้งเดิมที่ปรากฏหลักฐานการอยู่อาศัยมาตั้งแต่สมัยสุโขทัย เป็นชุมชนที่มีความสำคัญทางเศรษฐกิจและการค้า
+                ภายในชุมชนมีการอาศัยอยู่ร่วมกันระหว่างชาวไทยและชาวจีน มีวัดสีตลารามเป็นศาสนสถานสำคัญประจำชุมชน
+                และมีสถาปัตยกรรมบ้านไม้ที่มีลักษณะผสมผสานกันทั้งศิลปะสมัยอยุธยา แบบจีน และคลาสสิคในสมัยรัชกาลที่ 5
+            </p>
+            <p> นอกจากจะเป็นตลาดค้าขายแล้ว ในตรอกบ้านจีนก็ยังมีบริษัทค้าไม้ระหว่างเชียงใหม่-กรุงเทพฯ
+                มีบ้านนายอากรบ่อนเบี้ย รวมถึงบ้านของเศรษฐีอีกหลายๆ คน โดยในตลาดนั้นมีถนนทางเดิน
+                มีการมุงหลังคาชนกันทำให้ถนนเป็นที่ร่ม สามารถเดินเชื่อมถึงกันได้ทั้งตรอก
+                เรียกว่าเป็นตลาดใหญ่ที่คึกคักเป็นอย่างมากเมื่อช่วยร้อยกว่าปีก่อน
+            </p>
+        </div>
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>หาดทรายทอง</b></h1>
+            <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+            <img src="had.jpg" style="width:100%;min-height:200px">
+            <p> เป็นหาดทรายที่สร้างขึ้นทอดตัวยาวตลอดแนวแม่น้ำปิงมีความยาวถึง 1.5 กิโลเมตร ในช่วงเดือน ก.พ.-เม.ย.
+                ของทุกปี จะมีนักท่องเที่ยวให้ความสนใจ และมาเที่ยวชมเป็นจำนวนมาก
+            </p>
+            <p> สถานที่ท่องเที่ยวคลายร้อน สำหรับชาวเมืองตาก
+                บรรยากาศยามเย็น มานั่งเล่นริมแม่น้ำปิง มีทั้งร้านอาหารเครื่องดื่มให้เลือกซื้อ สามารถลงไปเล่นน้ำได้
+                สนุกสนานมีทั้งเด็กและผู้ใหญ่ ใครที่ไม่เล่นน้ำก็สามารถนั่งชมวิวแม่ปิงและสะพานแขวนเมืองตาก
+            </p>
+        </div>
+
+
+
+</body>
+
+</html>
+
+<script src="assets/creative.js"></script>

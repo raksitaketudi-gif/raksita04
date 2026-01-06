@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Web my hometown</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="assets/creative.css">
+  <style>
+    :root {
+      --c1: #DEB887;
+      --c2: #003300;
+      --c3: #E9967A;
+      --c4: #FFB6C1;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: " Kanit", sans-serif
+    }
+
+    body {
+      font-size: 16px;
+      background-color: var(--c4);
+      color: var(--c2);
+    }
+
+    .w3-sidebar {
+      background-color: var(--c1) !important;
+      color: #fff !important;
+    }
+
+    .w3-top.w3-red,
+    header.w3-container.w3-top {
+      background-color: var(--c2) !important;
+      color: #fff !important;
+    }
+
+    .w3-button.w3-red,
+    .w3-red {
+      background-color: var(--c3) !important;
+      color: #fff !important;
+      border-color: var(--c2) !important;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--c2);
+    }
+
+    /* Make gallery and content images uniform and aligned */
+    .w3-half img,
+    .w3-third img,
+    .w3-content img,
+    .w3-row-padding img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 0 0 16px 0;
+      opacity: 0.95;
+      cursor: pointer;
+    }
+
+    .w3-half img:hover,
+    .w3-third img:hover,
+    .w3-content img:hover,
+    .w3-row-padding img:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+    id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+      style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>Tak<br>: บ้านเรา</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="Web1.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">หน้าแรก</a>
+      <a href="Web2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">เกี่ยวกับ</a>
+      <a href="Web3.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">สถานที่สำคัญ</a>
+      <a href="Web4.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อุทยานแห่งชาติ</a>
+      <a href="Web5.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">อาหารพื้นเมือง</a>
+      <a href="Web6.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ภาพถ่ายในอดีต</a>
+      <a href="Web7.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ติดต่อ</a>
+    </div>
+
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>TAK : บ้านเรา</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 class="w3-jumbo"><b>ตาก...เมืองธรรมชาติ</b></h1>
+
+    </div>
+
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="w3-container" id="services" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>อุทยานแห่งชาติลานสาง</b></h1>
+      <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+      <img src="lan.jpg" style="width:100%;min-height:200px">
+      <p> อุทยานแห่งชาติลานสาง มีลำธารไหลผ่านหลายสาย เช่น ลำห้วยลานสาง ห้วยท่าเล่ย์ คลองห้วยทราย ห้วยอุมยอม
+        อีกทั้งป่าในเขตอุทยานฯ มีทั้งป่าดงดิบ ป่าสนเขา ป่าดิบเขา ป่าเต็งรัง ป่าเบญจพรรณ สลับกันไปตามลักษณะภูมิประเทศ
+        ส่วนสัตว์ป่าที่พบเห็น ได้แก่ หมูป่า เก้ง เต่าปูลู เลียงผา ชะมด นกปรอดเหลืองหัวจุก จิ้งก่าบิน เป็นต้น </p>
+      <p> ตำนานแห่งลานสาง ตามตำนานกล่าวว่า เมื่อครั้งที่สมเด็จพระเจ้ากรุงธนบุรี เสด็จยกทัพไปตีเมืองเชียงใหม่ครั้งที่ 2
+        ได้ทรงหยุดพักพลที่บ้านระแหง แขวงเมืองตาก มีชาวมอญเข้ามาสวามิภักดิ์ด้วยเป็นจำนวนมาก ทหารพม่าจึงติดตามเข้ามา
+        สมเด็จพระเจ้ากรุงธนบุรีได้เสด็จยกทัพไปขับไล่ และพลัดหลงกับกองทัพ อีกทั้งเป็นเวลากลางคืน
+        สภาพพื้นที่เป็นป่าเขารกทึบ จึงยากแก่การติดตาม กองทัพไทยจึงหยุดพัก
+        ขณะที่พักกันอยู่นั้นได้เกิดมีแสงสว่างพุ่งขึ้นสู่ท้องฟ้า และได้ยินเสียงม้าศึกร้อง จึงรีบพากันไปยังจุดนั้น
+        ก็พบสมเด็จพระเจ้ากรุงธนบุรีประทับม้าอยู่กลางลานหิน และมีแสงสว่างออกมาจากพระวรกาย
+        โดยมีทหารพม่าคุกเข่าหมอบอยู่โดยรอบ ขณะนั้นเป็นเวลาฟ้าสางพอดี จึงเรียกบริเวณนั้นว่า "ลานสาง"
+      </p>
+    </div>
+
+    <!-- Designers -->
+    <div class="w3-container" id="designers" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>อุทยานแห่งชาติตากสินมหาราช </b></h1>
+      <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+      <img src="ts.jpg" style="width:100%;min-height:200px">
+      <p>อุทยานแห่งชาติตากสินมหาราช
+      </p> ภูมิประเทศเป็นเทือกเขาสูงชันสลับซับซ้อน มีสภาพป่าสมบูรณ์ และอุดมไปด้วยป่าหลากหลายชนิด เช่น ป่าดิบเขา ป่าสนเขา
+      ป่าดงดิบ ป่าเต็งรัง และป่าเบญจพรรณ ทั้งนี้ อุทยานฯ มีสภาพอากาศเย็นสบายตลอดทั้งปี อุณหภูมิโดยเฉลี่ยประมาณ 23
+      องศาเซลเซียส ฝนตกชุกในช่วงเดือนสิงหาคมถึงเดือนตุลาคม ส่วนฤดูหนาวคือเดือนพฤศจิกายนถึงเดือนมกราคม อุณหภูมิประมาณ 9.1
+      องศาเซลเซียส
+      <p> ในอดีตพื้นที่ป่าแห่งนี้เคยเป็นเส้นทางเดินทัพของไทยและพม่า ในปี พ.ศ. 2305
+        ในคราวที่พระเจ้าอลองพญากษัตริย์พม่าได้ยกทัพมาล้อมกรุงศรีอยุธยา ทว่าในระหว่างยกทัพกลับ ได้ทรงประชวร
+        และสิ้นพระชนม์ในป่านี้
+      </p>
+      <p> ไฮไลท์แห่งอุทยานฯ - ต้นกระบากใหญ่ที่มีขนาดใหญ่ที่สุดในประเทศไทย มีอายุประมาณ 700 ปี มีขนาดวัดโดยรอบได้ 16.10
+        เมตร หรือราว 12 คนโอบ สูง 50 เมตร
+      </p>
+    </div>
+
+    <div class="w3-container" id="designers" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>อุทยานแห่งชาติขุนพะวอ</b></h1>
+      <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+      <img src="pw.jpg" style="width:100%;min-height:200px">
+      <p> อุทยานแห่งชาติขุนพะวอ เดิมมีชื่อว่า อุทยานแห่งชาติแม่กาษา แต่ภายหลังได้เปลี่ยนชื่อเป็น "อุทยานแห่งชาติขุนพะวอ"
+        เพื่อเป็นการยกย่อง พะวอ ทหารชาวกระเหรี่ยงในสมัยสมเด็จพระเจ้าตากสินมหาราชที่ได้รับแต่งตั้งให้เป็นนายด่านแม่ละเมา
+        และสละชีพระหว่างต่อสู้กับข้าศึกเพื่อปกป้องเอกราชของชาติในสมรภูมิรบ ซึ่งก็คือพื้นที่ในบริเวณอุทยานฯ
+      </p>
+      <p> นอกจากนี้ภายในอุทยานฯ ยังมีป่าเขาที่อุดมสมบูรณ์ และหลากหลาย น้ำตกขุนพะวอ น้ำตกขนาดกลาง 2 ชั้น ที่เกิดจาก
+        ลำห้วยผักไผ่น้ำตกป่าหมาก ที่ผุดออกมาจากหิน และ น้ำตกห้วยกระทิง
+      </p>
+      <p>
+        โดยวัดยังมีการจัดงานในช่วงเทศกาลสงกรานต์ทุกปีๆ ด้วย นอกจากนั้นก็ยังมีงานประเพณีที่สำคัญ คือ
+        ประเพณีขึ้นธาตุเดือนเก้า เป็นงานที่จัดขึ้นเพื่อเป็นการบูชาพระบรมธาตุ โดยจะจัดในวันขึ้น 14 ค่ำ และ 15 ค่ำ
+        เดือน 9 ของภาคเหนือ ประมาณปลายเดือนพฤษภาคมหรือเดือนมิถุยายนของทุกปีค่ะ ซึ่งภายในงานก็ะมีการจัดขบวนแห่
+        ทั้ง ขบวนกลองยาว ขบวนปัจจัยไทยทาน ขบวนต้นเงิน ขบวนต้นผ้าป่า ขบวนตุงไชย และ ผ้าห่มองค์พระธาตุ
+      </p>
+    </div>
+    <div class="w3-container" id="designers" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>อุทยานแห่งชาติน้ำตกพาเจริญ</b></h1>
+      <hr style="width:50px;border:5px solid rgb(48, 126, 73)" class="w3-round">
+      <img src="pj.png" style="width:100%;min-height:200px">
+      <p> อุทยานแห่งชาติน้ำตกพาเจริญสภาพทั่วไปส่วนใหญ่เป็นป่าเบญจพรรณ ป่าเขาสน และทุ่งดอกกระเจียวสีส้ม
+        ซึ่งเป็นดอกไม้ป่าตามธรรมชาติ แต่ที่อุทยานฯ แห่งนี้จะมีลักษณะแตกต่างจากที่อื่น
+        นั่นก็คือเป็นดอกกระเจียวสีส้มสดโดยจะออกดอกระหว่างเดือนกรกฏาคม-ตุลาคมของทุกปีบริเวณที่ทำการอุทยานฯ
+      </p>
+      <p> ไฮไลท์แห่งอุทยานฯ - น้ำตกพาเจริญ เป็นน้ำตกหินปูนที่เกิดจากลำห้วยหลายสายไหลมารวมกับแหล่งน้ำซับบนเขา
+        แล้วไหลลงสู่เบื่องล่างเป็นชั้นน้ำตกเล็ก ๆ นับรวมได้ถึง 97 ชั้น มีน้ำไหลตลอดปี
+      </p>
+    </div>
+</body>
+
+</html>
+
+<script src="assets/creative.js"></script>
